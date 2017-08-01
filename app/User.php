@@ -3,7 +3,7 @@ use db\Model;
 use interfaces\Notificatable;
 class User extends Model implements Notificatable{
     protected $fillable = ['name','surname','phone','email','rights_id'];
-    protected $loginField = "email";
+    protected static $loginField = "email";
     public function __construct(){
         parent::__construct('users','id','created_at','updated_at');
     }
